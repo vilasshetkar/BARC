@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Folder Links">
+		<message>This view will show all files and folders in selected folder</message>
+	</layout>
+	<fields name="request">
+		<fieldset name="request">
+			<field
+				name="folderName"
+				type="list"
+				label="Select Link Folder"
+				directory="images"
+				description="Select Folder for Link. You can see all sub items that folder in front page."
+				default="">
+					<option value="">Select Folder</option>
+					<option value="Notices">Notices</option>
+					<option value="Elecbills">Elecbills</option>
+					<option value="Attrecords">Attrecords</option>
+					<option value="Allot">Allot</option>
+					<option value="Rajbhasha">Rajbhasha</option>
+					<option value="Accounts">Accounts</option>
+					<option value="Admin">Admin</option>
+					<option value="Personnel">Personnel</option>
+					<option value="Miscellaneous">Miscellaneous</option>
+					<option value="Software">Software</option>
+			</field>
+		</fieldset>
+	</fields>
+</metadata>
