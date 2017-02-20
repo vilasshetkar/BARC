@@ -17,8 +17,14 @@ class AddressBookViewFolderList extends JViewLegacy
 	 
 	function display($tpl = null)
 	{
+		$layout = $this->getLayout();
+		$jinput = JFactory::getApplication()->input;
+		
+		$fileUpload = $this->get('FolderName');
+		$this->folderName = $fileUpload["data"];
+		$this->error = $fileUpload["error"];
 		$this->files = $this->get('Files');
-
+		
 		// Check for errors.
 		if (count($errors = $this->get('Errors')))
 		{

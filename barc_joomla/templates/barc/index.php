@@ -95,15 +95,15 @@ else
 	<body>
 		<header class="container">
 			<div class="main-header row">
-				<div class="logo-left col-sm-1">
+				<div class="logo-left col-xs-1">
 					<img src="<?php echo $templateUrl ?>/img/barc-logo-left.png" alt="BARC Tarapur" />
 				</div>
-				<div class="site-heading col-sm-9">
+				<div class="site-heading col-xs-9">
 					<h3>Government of India</h3>
 					<h1>Department of Atomic Energy</h1>
 					<h2>Bhabha Atomic Research Centre, Tarapur</h2>
 				</div>
-				<div class="logo-right col-sm-2">
+				<div class="logo-right col-xs-2">
 					<img src="<?php echo $templateUrl ?>/img/barc-logo-right.png" alt="BARC Tarapur" />
 				</div>
 			</div>
@@ -198,6 +198,12 @@ else
 		</footer>
 		<script>
 			$(".nav-child").addClass("dropdown-menu");
+			$(".alert-message").addClass("alert-success");
+			$(".alert-error").addClass("alert-danger");
+			$(".alert-notice").addClass("alert-info");
+			$('img').error(function(){
+				$(this).attr('src', '<?php echo JUri::root() ?>/images/icons/file-ext/DEFAULT.png');
+			});
 		</script>
 	</body>
 </html>

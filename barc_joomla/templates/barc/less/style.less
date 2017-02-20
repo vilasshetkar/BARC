@@ -22,17 +22,20 @@ body{
 }
 
 header{
+	.logo-left img, .logo-right img {
+		height: 9.35vw;
+		margin-top : 5px;
+	}
 	.site-heading{
-		text-align : center;
-		height : 145px;
+		text-align : center;		
 		overflow : hidden;
+		margin-bottom : 15px;
 		h2, h3{
-			color : #6a6a6a;
-			
+			color : #6a6a6a;			
 		}
 		h1{
 			color : #ff881a;
-			font-size : 50px;
+			font-size: 3.5vw;
 			font-weight : bold;
 			margin : 0;
 			text-shadow: 1px 1px 2px grey;
@@ -40,9 +43,11 @@ header{
 		h2{
 			margin: 7px 0 0;
 			font-weight : bold;
+			font-size: 2vw;
 		}
 		h3{
 			margin: 15px 0 0;
+			font-size: 1.75vw;
 		}
 	}
 }
@@ -50,17 +55,44 @@ header{
 nav{
 	background-color : #ffffff;
 	.nav{
+		li{
+			&.deeper.parent{
+				>a, >.nav-header {
+					padding-right : 15px;
+				}
+				&:after {
+					content: "";
+					display: inline-block;
+					position: absolute;
+					border-top: 5px solid transparent;
+					border-left: 5px solid red;
+					border-bottom: 5px solid transparent;
+					top: 0;
+					bottom: 0;
+					height: 5px;
+					margin: auto;
+					right: 10px;
+				}
+			}
+			&:hover{
+				>.dropdown-menu{
+					display : block;
+				}
+			}
+		}
 		> li{
-			>a, .nav-header{
+			a, .nav-header{
 				font-family : "EncodeSans", sans-serif;
 				font-weight : 100;
-				padding : 15px 10px;
+				padding: 3px 20px;
 				border-left: 1px solid @lightgray;
-				border-bottom: 1px solid @lightgray;
 				color : #242424;
 				display: block;
 				line-height: 20px;
 				cursor : pointer;
+			}
+			>a, >.nav-header{				
+				padding : 15px 10px;				
 			}
 			&:last-child{
 				>a{
@@ -73,34 +105,24 @@ nav{
 				color : @white;
 				
 			}
-			&:hover{
-				.nav-child{
-					display : block;
+			
+			.dropdown-menu{
+				margin-top : 0;
+				.dropdown-menu{
+					top : 0;
+					left : 100%;
 				}
 			}
-			.nav-child{
-				position: absolute;
-				top: 100%;
-				left: 0;
-				z-index: 1000;
-				display: none;
-				float: left;
-				min-width: 160px;
-				padding: 5px 0;
-				margin: 2px 0 0;
-				font-size: 14px;
-				text-align: left;
-				list-style: none;
-				background-color: #fff;
-				-webkit-background-clip: padding-box;
-				background-clip: padding-box;
-				border: 1px solid #ccc;
-				border: 1px solid rgba(0,0,0,.15);
-				border-radius: 4px;
-				-webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
-				box-shadow: 0 6px 12px rgba(0,0,0,.175);
+			&.deeper.parent{
+				&:after {
+					border-left: 5px solid transparent;
+					border-top: 5px solid red;
+					border-right: 5px solid transparent;
+					right: 3px;
+				}
 			}
 		}
+		
 	}
 }
 
