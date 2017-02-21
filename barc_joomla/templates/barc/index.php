@@ -196,14 +196,27 @@ else
 				</div>
 			</div>
 		</footer>
-		<script>
-			$(".nav-child").addClass("dropdown-menu");
-			$(".alert-message").addClass("alert-success");
-			$(".alert-error").addClass("alert-danger");
-			$(".alert-notice").addClass("alert-info");
-			$('img').error(function(){
-				$(this).attr('src', '<?php echo JUri::root() ?>/images/icons/file-ext/DEFAULT.png');
+		<script>			
+			jQuery(".alert-message").addClass("alert-success");
+			jQuery(".alert-error").addClass("alert-danger");
+			jQuery(".alert-notice").addClass("alert-info");
+			jQuery('img').error(function(){
+				jQuery(this).attr('src', '<?php echo JUri::root() ?>/images/icons/file-ext/DEFAULT.png');
 			});
+			
+			/* jQuery(".deeper.parent").bind('touchstart', function(e) {
+				//e.preventDefault();
+				e.stopPropagation();
+				jQuery(".deeper.parent").not(jQuery(this).parents()).removeClass("open");
+				jQuery(this).addClass('open');
+			});
+			jQuery(document).bind('touchstart keypress', function(e) {
+				console.log(e);
+				e.stopPropagation();
+				jQuery(".deeper.parent").removeClass("open");
+				jQuery(this).addClass('open');
+			}); */
+			
 		</script>
 	</body>
 </html>

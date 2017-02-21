@@ -11,6 +11,11 @@ defined('_JEXEC') or die('Restricted access');
 $url = parse_url($_SERVER['REQUEST_URI']);
 
 ?>
+<h2>
+	<?php echo $this->data["item"]; ?>
+	<br/>
+	<small>Folder Name: <?php echo $this->data["folderName"]; ?></small>
+</h2>
 <div class="well">
 	<div class="row">
 		<div class="col-sm-12">
@@ -41,13 +46,15 @@ $url = parse_url($_SERVER['REQUEST_URI']);
 			<?php } ?>
 		</div>
 	</div>
+	<hr/>
 	
 	<?php if(isset($_GET["children"])){ ?>
 		<a class="btn btn-link" href="<?php echo $url["path"] ?>" title="<?php echo $file["file"] ?>">
 			<span class="glyphicon glyphicon-home"></span> Home
 		</a>
-	<?php } ?>
-	<hr/>
+	<?php }
+		if(count($this->files) >=1){
+	?>
 	<div class="table-responsive">
 		<table class="table table-stripped table-hover">
 		<thead>
@@ -93,4 +100,7 @@ $url = parse_url($_SERVER['REQUEST_URI']);
 		<?php } ?>
 		</table>
 	</div>
+	<?php }else{ ?>
+		<h2 class="text-warning">Folder is empty!</h2>
+	<?php } ?>
 </div>

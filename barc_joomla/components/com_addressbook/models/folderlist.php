@@ -103,13 +103,17 @@ class AddressBookModelFolderList extends JModelItem
 		$folderName     = $jinput->get('folderName');
 		$userId     = $jinput->get('user_id');
 		$allow_group     = $jinput->get('allow_group');
-		$usergroup     = $jinput->get('usergroup');
+		$usergroup     = $jinput->get('usergroup') ? $jinput->get('usergroup') : array();
 		$this->folderName = $folderName;
 		$user = JFactory::getUser();
 		$response = array("data" => null, "error" => null);
 		
 		$groupCheck = count(array_intersect($usergroup, $user->groups));
 		
+		$item = $app->getMenu()->getActive();
+		$params = $item->params; // get the params
+		//echo json_encode($item); // print all params as overview
+		//echo $params->get('show_page_heading');
 		if ($user->guest) {
 			$response["error"]["guest"] = true;
 			$response["error"]["error"] = "You don't have file upload access.";
@@ -121,9 +125,10 @@ class AddressBookModelFolderList extends JModelItem
 		}
 		
 		if(count($_FILES)>0){
-			$response["data"] = $this->uploadFile($folderName);
+			$this->uploadFile($folderName);
 		}
-
+		$response["data"]["item"] = $item->title;
+		$response["data"]["folderName"] = $folderName;
 		return $response;
 	}
 	

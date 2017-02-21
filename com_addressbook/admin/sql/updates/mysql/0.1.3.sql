@@ -1,0 +1,1 @@
+ALTER TABLE  `#__addressbook` ADD  `title` VARCHAR( 32 ) NOT NULL AFTER  `emp_no`;

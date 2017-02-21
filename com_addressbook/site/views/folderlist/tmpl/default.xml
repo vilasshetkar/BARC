@@ -7,7 +7,7 @@
 		<fieldset name="request">
 			<field
 				name="folderName"
-				type="list"
+				type="text"
 				label="Select Link Folder"
 				directory="images"
 				description="Select Folder for Link. You can see all sub items that folder in front page."
@@ -24,6 +24,25 @@
 					<option value="Miscellaneous">Miscellaneous</option>
 					<option value="Software">Software</option>
 			</field>
+			
+			<field
+				name="user_id"
+				type="user"
+				label="Select User"				
+			/>
+			
+			<field name="allow_group" type="radio" default="0" label="Allow Group" description="Select to allow all users in selected group" class="btn-group">
+				<option value="0">No</option>
+				<option value="1">Yes</option>
+			</field>
+			
+			<field
+				name="usergroup"
+				type="usergroup"
+				label="Select User Group"
+				multiple="true"
+			/>
+			
 		</fieldset>
 	</fields>
 </metadata>

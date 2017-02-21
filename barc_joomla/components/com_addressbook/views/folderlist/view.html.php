@@ -21,7 +21,7 @@ class AddressBookViewFolderList extends JViewLegacy
 		$jinput = JFactory::getApplication()->input;
 		
 		$fileUpload = $this->get('FolderName');
-		$this->folderName = $fileUpload["data"];
+		$this->data = $fileUpload["data"];
 		$this->error = $fileUpload["error"];
 		$this->files = $this->get('Files');
 		
