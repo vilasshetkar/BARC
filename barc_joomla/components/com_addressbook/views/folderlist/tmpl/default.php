@@ -21,14 +21,7 @@ $url = parse_url($_SERVER['REQUEST_URI']);
 		<div class="col-sm-12">
 			<?php
 			$url = parse_url($_SERVER['REQUEST_URI']);
-			if($this->error){ ?>
-				<?php echo $this->error["error"];
-					if(isset($this->error["guest"])){
-				?>				
-					<a href="<?php echo JRoute::_('index.php?option=com_users&view=login'); ?>" title="Login">Login to Continue</a>
-			<?php	}else { ?>
-			<?php }
-				}else{
+			if(!$this->error){ 
 			?>
 				<a class="btn btn-info pull-right" href="<?php echo JRoute::_('index.php?option=com_users&view=login&layout=logout'); ?>" title="Login">Logout</a>
 			<form class="form-inline" action="<?php echo JRoute::_('index.php?option=com_addressbook'); ?>"method="post" name="uploadFile" id="uploadFile" enctype="multipart/form-data">
