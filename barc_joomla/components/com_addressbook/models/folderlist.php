@@ -85,7 +85,8 @@ class AddressBookModelFolderList extends JModelItem
 			if(isset($_GET["children"])){
 				$files = $this->getDirContents($_GET["children"]);
 			}else{
-				$files = $this->getDirContents("images/" . $folderName);
+				$this->checkDir("images/uploads/");
+				$files = $this->getDirContents("images/uploads/" . $folderName);
 			}
 			//echo json_encode($files);
 			$this->files = $files;
@@ -172,7 +173,7 @@ class AddressBookModelFolderList extends JModelItem
 		$fileTemp = $_FILES[$fieldName]['tmp_name'];
 		
 		//always use constants when making file paths, to avoid the possibilty of remote file inclusion
-		$uploadPath = JPATH_SITE.'/images/'.$folder.'/'.$fileName;
+		$uploadPath = JPATH_SITE.'/images/uploads/'.$folder.'/'.$fileName;
 		 
 		if(!JFile::upload($fileTemp, $uploadPath, false, true)) 
 		{

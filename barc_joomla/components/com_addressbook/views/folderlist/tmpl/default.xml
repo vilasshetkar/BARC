@@ -28,7 +28,8 @@
 			<field
 				name="user_id"
 				type="user"
-				label="Select User"				
+				label="Select User"	
+				required="true"
 			/>
 			
 			<field name="allow_group" type="radio" default="0" label="Allow Group" description="Select to allow all users in selected group" class="btn-group">

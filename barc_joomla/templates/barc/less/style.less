@@ -67,6 +67,7 @@ nav{
 	background-color : #ffffff;
 	.nav{
 		li{
+			position : relative;
 			&.deeper.parent{
 				>a, >.nav-header {
 					padding-right : 20px;
@@ -94,6 +95,13 @@ nav{
 					display : block;
 				}
 			}
+			
+			&.active > a, >a:active, >a:focus, >a:hover, > .nav-header:hover{
+				background-color : @orange;
+				color : @white;
+				
+			}
+			
 		}
 		> li{
 			a, .nav-header{
@@ -115,11 +123,6 @@ nav{
 				}
 			}
 			
-			&.active a, a:active, a:focus, a:hover, .nav-header:hover{
-				background-color : @orange;
-				color : @white;
-				
-			}
 			
 			.dropdown-menu{
 				margin-top : 0;
